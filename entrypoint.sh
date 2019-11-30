@@ -1,5 +1,4 @@
 #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
+knit exec --parallel --scope modified --range HEAD~.. npm version KNIT_MODULE_VERSION --no-git-tag-version
 echo ::set-output name=time::$time
